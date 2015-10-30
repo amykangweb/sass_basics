@@ -1,0 +1,72 @@
+// Mixins continued...
+
+@mixin roundy($radius_one, $color) {
+  border-radius: $radius-one;
+  border-top-right-radius: $radius-one * 2;
+  border-bottom-left-radius: $radius-two;
+  a {
+    color: $color;
+  }
+}
+
+.box {
+  @include roundy(4px, blue);
+}
+
+.button {
+  @include roundy(2px, red);
+  background: #345;
+}
+
+// Mixins should be used if you find yourself re-using code 2 or more times.
+// Global mixins should be used if you're using the same code 6 or more times.
+
+Extending Selectors
+
+.bar {
+  height: 14px;
+  font-size: 10px;
+  > div {
+    float: left;
+    clear: none;
+  }
+}
+
+// Add additional css to an existing class with @extend.
+// @extend will apply the styles from the extended element, in this case .bar and add them to the current element.
+
+.menu {
+  @extend .bar;
+  background: #345;
+}
+
+// The plain CSS would look like this:
+
+.bar, .menu {
+  height: 14px;
+  font-size: 10px;
+  .bar > div, .menu > div {
+    float: left;
+    clear: none;
+  }
+}
+
+// You can see that .menu is now given all the same attributes as .bar
+
+//You can make the .bar selector into a "placeholder" by adding a percentage sign to it.
+
+%bar {
+  // styles
+}
+
+//bar is now a placeholder that can be used to give attributes to other selectors. It is no longer an element, but works like a variable that contains styles.
+
+.menu {
+  @extend %bar;
+}
+
+Mixin vs. Extend
+
+// Mixins are useful for creating functions where arguments can be passed in. Extends only apply existing styles to other elements.
+// You can use mixins like extends or use them only when taking parameters and evaluating arguments.
+// Your choice.
