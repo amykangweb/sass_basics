@@ -1,0 +1,5 @@
+Run bourbon install to generate bourbon files.
+
+Certain features such as linear-gradients are not standard across all browsers. Sass libraries like bourbon will allow you to include and use CSS by adding in browser-prefixes.
+
+Bourbon will define fallback fonts automatically.
