@@ -1,0 +1,25 @@
+Can nest media queries with Sass.
+
+.content {
+  .sidebar{
+    background: #999;
+    @media (max-width: 480px) {
+      background: red;
+    }
+  }
+}
+
+Example:
+
+@media screen and (orientation: landscape) {
+    img {
+        width: 360px;
+    }
+    ul#menu {
+      li {
+        @media screen and (max-width: 500px) {
+          text-align: center;
+        }
+      }
+    }
+}
