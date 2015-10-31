@@ -1,0 +1,27 @@
+sass --style compressed main.scss
+
+It will compress the css file and show it on the command line.
+
+sass --style compressed main.scss:main.css
+
+Will actually compress the CSS file.
+
+sass --style expanded main.scss:main.css
+
+Will expand CSS file.
+
+Set style to compact or compressed for large sites.
+
+sass -l main.scss:main.css
+
+Will create line number comments in CSS file that show where the original code is in the SCSS file.
+
+@mixin old {
+  @warn "Please use new() instead";
+}
+
+body {
+  @include old;
+}
+
+Will show a warning when compressing SCSS file.
