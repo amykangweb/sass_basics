@@ -1,0 +1,4 @@
+$background: desaturate(#cd3cc1, 30%);
+$text-color: complement($background);
+$mix-color: mix(#369, #187);
+$highlighted-text-color: lighten($text-color, 20%);
