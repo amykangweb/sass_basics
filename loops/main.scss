@@ -1,0 +1,31 @@
+.box {
+  width: 100%;
+  height: 10px;
+}
+
+@mixin box($size, $color, $display: block) {
+  width: $size;
+  height: $size;
+  background: $color;
+  display: $display;
+}
+
+a {
+  @include box($color: blue, $size: 20px);
+}
+
+@mixin band($name, $members...) {
+  @each $member in $members {
+    .#{$name}.#{$member} {
+      background: url("images/#{$member}.jpg");
+    }
+  }
+}
+
+@include band(radiohead, thom jonny colin phil);
+
+@for $i from 1 through 14 {
+  .box:nth-child(#{$i}) {
+    background: darken(pink, $i);
+  }
+}
